@@ -1,0 +1,37 @@
+{
+  "name": "portfolio-but",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "animate.css": "^3.7.0",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.2.1",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "nodemailer": "^5.1.1",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "nodemon": "^1.18.10",
+    "popper.js": "^1.14.6",
+    "request": "^2.88.0",
+    "serve-static": "^1.13.2",
+    "vue": "^2.5.21",
+    "vue-clazy-load": "^0.4.2",
+    "vue-router": "^3.0.1",
+    "vue-scrollto": "^2.13.0",
+    "vue2-smooth-scroll": "^1.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.3",
+    "@vue/cli-plugin-babel": "^3.3.0",
+    "@vue/cli-service": "^3.3.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.21"
+  }
+}
