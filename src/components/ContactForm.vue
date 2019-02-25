@@ -6,12 +6,17 @@
             Looking for exiting development opportunties and friendly greets 👋
         </h5>
         <form action="" method="post" class="container-fluid mt-5" v-if="show" >
-            <input type="text" placeholder="input your name" name="name" class="col-sm-8 col-md-6 "  v-model="name" required>
-            <input type="email" placeholder="input your email" name="email" class="col-sm-8 col-md-6"  v-model="email" required>
-            <textarea name="messge"  cols="30" rows="3" placeholder="input message" class="col-sm-8 col-md-6"  v-model="message" required></textarea>
-            <button @click.prevent="sendMessage">submit</button>
+            <input type="text" placeholder="input your name" name="name" class="col-sm-8 col-md-6 "  v-model="name" >
+            <p  :class="{visible:showNameWarn}" class="warning">This field is required</p>
+            <input type="email" placeholder="input your email" name="email" class="col-sm-8 col-md-6"  v-model="email" >
+            <p  :class="{visible:showEmailWarn}" class="warning">This field is required and must have @</p>
+            <textarea name="message"  cols="30" rows="3" placeholder="input message" class="col-sm-8 col-md-6"  v-model="message" ></textarea>
+            <p :class="{visible:showMessageWarn}" class="warning">This field is required and must have 20 characters at least</p>
+
+            <button @click.prevent="sendMessage" >submit  </button>
+
         </form>
-        <div class="thanks" v-else>
+        <div class="thanks" v-else >
             <h3 class="text-center m-5">Thank you, your message has been sent</h3>
         </div>
     </section>
@@ -22,29 +27,47 @@
         data(){
             return {
                 name:'',
+                showNameWarn:false,
                 email:'',
+                showEmailWarn: false,
                 message:'',
+                showMessageWarn:false,
                 show: true
             }
         },
         methods : {
             sendMessage() {
-                this.show = !this.show;
-              /*  fetch('/form', {
-                    method: 'post',
-                    body: JSON.stringify({
-                        name: this.name,
-                        email: this.email,
-                        message: this.message
-                    })
-                }).then(r=>r.json())
-                    .then(data=>{
-                        if(data){
+                (()=>{
+                    if(this.name.length < 5){
+                        this.showNameWarn = true;
+                    }else this.showNameWarn = false ;
+                    let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-                        }
-                    })*/
+                    if (!filter.test(this.email)) {
+                        this.showEmailWarn = true;
+                    }else  this.showEmailWarn = false;
+                    if (this.message.length < 5){
+                        this.showMessageWarn = true
+                    } else this.showMessageWarn=false
+
+                })()
+                if (!this.showNameWarn && !this.showEmailWarn && !this.showMessageWarn) {
+                    fetch('/form', {
+                        method: 'post',
+                        body: JSON.stringify({
+                            name: this.name,
+                            email: this.email,
+                            message: this.message
+                        })
+                    }).then(r => r.json())
+                        .then(data => {
+                            if (data) {
+                                this.show = !this.show;
+                            }
+                        })
+                }
             }
-        }
+        },
     }
 </script>
 
@@ -65,6 +88,11 @@
                 border-color: transparent;
                 border-bottom:1px solid #2e3d49;
             }
+            .warning{
+                color:red;
+                font-size: 12px;
+                visibility: hidden;
+            }
             button{
                 cursor: pointer;
                 background: #2e3d49;
@@ -72,9 +100,11 @@
                 color: white;
                 border-radius: 5px;
                 &:hover{
-                    text-decoration: none;
                     color: darken(white,20%);
                 }
+            }
+            .visible{
+                visibility: visible;
             }
         }
     }

@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const sendGridTransport = require('nodemailer-sendgrid-transport');
 const transporter = nodemailer.createTransport(sendGridTransport({
     auth:{
-        api_user: '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'
+        api_user: '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'
     }
 }));
 
@@ -24,7 +24,7 @@ router.use('/form',(req,res,next)=>{
                 to: 'butmax1991@gmail.com',
                 from: body.email,
                 subject: 'Signup succeeded!',
-                html: `<h1>${body.message}</h1>`,
+                text: body.message,
             }).then(r=>r.message ==='success'? res.send(true):res.send(false));
         }else res.send(false);
     });

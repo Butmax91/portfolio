@@ -4,11 +4,11 @@ const express = require('express');
 const serverStatic = require('serve-static');
 
 
-const form = require('./controllers');
+const form = require('./controllers/mail');
 
 const app = express();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use('/',serverStatic(path.join(__dirname, '/dist')));
 app.use(form);
-const port = process.env.PORT || 8093;
+const port = process.env.PORT || 8090;
 app.listen(port);
