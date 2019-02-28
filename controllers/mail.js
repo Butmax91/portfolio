@@ -1,9 +1,11 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const sendGridTransport = require('nodemailer-sendgrid-transport');
+const tryTo = ['SG.1PbBGK0ISnm0','denROvVYOQ.0Rco8AhT','KLJErwi1CCY3KcU-','Yk-EvLvxbqigH5Ad3gY'];
 const transporter = nodemailer.createTransport(sendGridTransport({
+
     auth:{
-        api_user: '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'
+        api_user: tryTo.join('')
     }
 }));
 

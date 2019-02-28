@@ -11,7 +11,7 @@
             <input type="email" placeholder="input your email" name="email" class="col-sm-8 col-md-6"  v-model="email" >
             <p  :class="{visible:showEmailWarn}" class="warning">This field is required and must have @</p>
             <textarea name="message"  cols="30" rows="3" placeholder="input message" class="col-sm-8 col-md-6"  v-model="message" ></textarea>
-            <p :class="{visible:showMessageWarn}" class="warning">This field is required and must have 20 characters at least</p>
+            <p :class="{visible:showMessageWarn}" class="warning">This field is required and must have at least 20 characters </p>
 
             <button @click.prevent="sendMessage" >submit  </button>
 
@@ -46,11 +46,11 @@
                     if (!filter.test(this.email)) {
                         this.showEmailWarn = true;
                     }else  this.showEmailWarn = false;
-                    if (this.message.length < 5){
+                    if (this.message.length < 20){
                         this.showMessageWarn = true
                     } else this.showMessageWarn=false
 
-                })()
+                })();
                 if (!this.showNameWarn && !this.showEmailWarn && !this.showMessageWarn) {
                     fetch('/form', {
                         method: 'post',

@@ -2,12 +2,11 @@
   <div id="app" v-cloak>
     <NavBar></NavBar>
     <hero></hero>
-    <about></about>
-    <projects></projects>
-    <skills></skills>
-
-      <ContactForm/>
-    <copyright></copyright>
+    <About/>
+    <Do/>
+    <projects/>
+    <ContactForm/>
+    <copyright/>
   </div>
 </template>
 
@@ -16,7 +15,7 @@
   import About from './components/About';
   import Do from './components/Do';
   import Projects from './components/Projects';
-  import Skills from './components/Skills';
+  //import Skills from './components/Skills';
   import Contact from './components/Contact';
   import Copyright from './components/Copyright';
   import NavBar from './components/NavBar'
@@ -30,7 +29,6 @@
       About,
       Do,
       Projects,
-      Skills,
       Contact,
         ContactForm,
       Copyright,

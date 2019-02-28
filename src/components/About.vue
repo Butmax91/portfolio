@@ -5,22 +5,29 @@
       </div>
       <h2 class="about-title " v-scrollPage="'fadeInDown'" >About</h2>
       <Separator :color="`#2e3d49`"/>
-      <div class="about-text text-capitalize col-12 col-md-8 text-center p-0"  v-scrollPage="'fadeInDown'">
-        I’m a Front-end Developer. I have been learning and doing a different kind of tasks using JavaScript / HTML5 / CSS3 and have a big passion to grow and know even more. Recently I learned Vue.js/MySQL and created a website for my portfolio.
-
+      <div class="about-text text-capitalize col-12 col-md-8 col-lg-6 text-center p-0"  v-scrollPage="'fadeInDown'">
+        Hello!
+        I’m Max, a Front-end Developer.
+        I’m constantly learning web technologies and other design related topics,
+        currently playing around with Javascript.
+         and have a big passion to grow and know even more.
+        Recently I learned Vue.js.
         My analytical skills help me to quickly learn and be up to date with the latest technologies and approaches.
       </div>
     </div>
+
   </section>
+
+
+
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
 export default {
   name: 'about',
-  data() {
-    return {
-      some: 'ololo'
-    }
+  computed :{
+  ...mapGetters(['getSkills'])
   }
 
 };
@@ -52,26 +59,17 @@ export default {
       margin-bottom: 50px;
       font-size: 20px;
     }
-
   }
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 30%, 0);
-        -ms-transform: translate3d(0, 30%, 0);
-        transform: translate3d(0, 30%, 0);
-      }
-      100% {
-        opacity: 1;
-        -webkit-transform: none;
-        -ms-transform: none;
-        transform: none;
-      }
+    .skill{
+      font-size: 10px;
     }
-
-    .fadeInUp {
-      animation-name: fadeInUp;
-      animation-timing-function: ease-out;
-    }
+  .skills{
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 </style>
 

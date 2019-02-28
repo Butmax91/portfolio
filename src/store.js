@@ -38,6 +38,20 @@ export default new Vuex.Store({
                 }
             },
             {
+                img: imagesProjects.weather,
+                name: 'Weather-spa',
+                technologyes: ['vue','ajax','css3'],
+                description: 'Lightweight, mobile-first web app to check your local weather or any location by name or ZIP-code in real time.\n' +
+                    '\n',
+                links : {
+                    gitHub : { title: 'gitHub', url : "https://github.com/Butmax91/XlTechnology"},
+                    demo : {
+
+                        url : "",
+                    },
+                }
+            },
+            {
                 img: imagesProjects.XL_Technology,
                 name: 'Xl Technology',
                 technologyes: ['html', 'css', 'js'],
@@ -47,6 +61,7 @@ export default new Vuex.Store({
                     demo : { title: 'demo', url : "https://butmax91.github.io/XlTechnology/"},
                 }
             },
+
         ],
 
         skills : [

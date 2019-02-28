@@ -36,9 +36,6 @@ export default {
           title: 'Projects',
           el: '#projects',
         }, {
-          title: 'Skills',
-          el: '#skills',
-        }, {
           title: 'Contact',
           el: '#contact',
         },

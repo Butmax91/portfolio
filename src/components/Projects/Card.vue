@@ -11,7 +11,7 @@
     <div class="card-links">
 
       <a :href="project.links.gitHub.url" target="_blank"><i class="fab fa-github link"></i> {{project.links.gitHub.title}}</a>
-      <a :href="project.links.demo.url" target="_blank" class="link">{{project.links.demo.title}}</a>
+      <a :href="project.links.demo.url" target="_blank"  class="link" v-if="project.links.demo.url">{{project.links.demo.title}}</a>
     </div>
 
   </div>
