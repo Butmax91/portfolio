@@ -3,7 +3,7 @@
         <h2 class="m-5">What I do</h2>
         <Separator :color="'#2e3d49'"/>
         <div class="do-container p-0 d-flex justify-content-around col-lg-8 col-md-10 col-sm-12 m-auto flex-wrap">
-            <ul class="text-left col-12 col-sm-6 text-justify" v-scrollPage="'fadeInLeft'">
+            <ul class="text-sm-left col-12 col-sm-6 text-center" v-scrollPage="'fadeInLeft'">
                 <li>Convert PSD layouts  to HTML</li>
                 <li>Adaptation of new and ready pages for mobile devices</li>
                 <li>Implementation of JavaScript logic (sliders, popups, animations, AJAX, etc.)</li>

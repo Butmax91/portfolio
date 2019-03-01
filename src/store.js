@@ -44,7 +44,7 @@ export default new Vuex.Store({
                 description: 'Lightweight, mobile-first web app to check your local weather or any location by name or ZIP-code in real time.\n' +
                     '\n',
                 links : {
-                    gitHub : { title: 'gitHub', url : "https://github.com/Butmax91/XlTechnology"},
+                    gitHub : { title: 'gitHub', url : "https://github.com/Butmax91/weather-app"},
                     demo : {
 
                         url : "",
@@ -59,6 +59,16 @@ export default new Vuex.Store({
                 links : {
                     gitHub : { title: 'gitHub', url : "https://github.com/Butmax91/XlTechnology"},
                     demo : { title: 'demo', url : "https://butmax91.github.io/XlTechnology/"},
+                }
+            },
+            {
+                img: imagesProjects.table,
+                name: 'Dinamic table',
+                technologyes: ['vue'],
+                description: 'Aplication wich take a json and conver it to dinamic table',
+                links : {
+                    gitHub : { title: 'gitHub', url : "https://github.com/Butmax91/dinamic_table"},
+                    demo : { title: 'demo', url : "https://dinamic-table.herokuapp.com/"},
                 }
             },
 

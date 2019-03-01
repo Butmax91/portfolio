@@ -1,19 +1,20 @@
 <template>
-  <div class="card  col-sm-5 text-center col-md-5 col-lg-5 pb-3 m-1" v-scrollPage="'fadeInDown'">
-    <img ref="img" :src="project.img"  :alt="project.alt">
-    <h4 class="m-2">{{project.name}}</h4>
-    <div class="card-technologies">
-     <span class="card-technologyes-technology" v-for="item in project.technologyes">{{item}}</span>
-    </div>
-    <div class="card-description">
-      {{project.description}}
-    </div>
-    <div class="card-links">
+  <div class="col-12 col-sm-6 text-center col-md-6 col-lg-6 col-xl-4 pb-2 " v-scrollPage="'fadeInDown'">
+      <div class="card pb-3">
+        <img ref="img" :src="project.img"  :alt="project.alt">
+        <h4 class="m-2">{{project.name}}</h4>
+        <div class="card-technologies">
+         <span class="card-technologyes-technology" v-for="item in project.technologyes">{{item}}</span>
+        </div>
+        <div class="card-description">
+          {{project.description}}
+        </div>
+        <div class="card-links">
 
-      <a :href="project.links.gitHub.url" target="_blank"><i class="fab fa-github link"></i> {{project.links.gitHub.title}}</a>
-      <a :href="project.links.demo.url" target="_blank"  class="link" v-if="project.links.demo.url">{{project.links.demo.title}}</a>
-    </div>
-
+          <a :href="project.links.gitHub.url" target="_blank"><i class="fab fa-github link"></i> {{project.links.gitHub.title}}</a>
+          <a :href="project.links.demo.url" target="_blank"  class="link" v-if="project.links.demo.url">{{project.links.demo.title}}</a>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -29,7 +30,7 @@ export default {
   .card{
     padding-top: 5px;
     img{
-      height: calc(1vw*30);
+      height: calc(1vw*25);
       @media (max-width: 576px){
         height:calc(1vw*60);
     }
